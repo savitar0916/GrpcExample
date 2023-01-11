@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGreeter";
+
+package greet;
+
+service Greeter {
+  // Sends a greeting
+	rpc SayHello (HelloRequest) returns (HelloReply);
+	rpc SayHelloStream (HelloServerStreamingRequest) returns (stream HelloReply);
+	rpc StreamSayHello (stream HelloRequest) returns (HelloReply);
+	rpc StreamSayHelloStream (stream HelloRequest) returns (stream HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The request message containing the user's name.
+message HelloServerStreamingRequest {
+  string name = 1;
+  int32 nameCount = 2;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}

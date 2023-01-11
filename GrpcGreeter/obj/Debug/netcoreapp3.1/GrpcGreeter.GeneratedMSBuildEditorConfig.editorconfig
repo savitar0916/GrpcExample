@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = GrpcGreeter
+build_property.ProjectDir = C:\Users\archer.li\Desktop\MyProject\GrpcExample\GrpcGreeter\
